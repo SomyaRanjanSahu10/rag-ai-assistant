@@ -19,6 +19,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+os.makedirs("uploads", exist_ok=True)
+os.makedirs("vectorstore", exist_ok=True)
+os.makedirs("logs", exist_ok=True)
+
 from utils.logger import setup_logging
 setup_logging()
 
@@ -86,7 +90,8 @@ app.include_router(chat_router)
 app.include_router(health_router)
 
 # ── Static files ───────────────────────────────────────────────────────────────
-app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
+if os.path.exists("uploads"):
+    app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 
 
 @app.get("/")

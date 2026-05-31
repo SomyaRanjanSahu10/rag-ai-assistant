@@ -47,7 +47,7 @@ async def lifespan(app: FastAPI):
     os.makedirs("logs", exist_ok=True)
 
     await init_db()
-    initialize_vectorstore()
+    # initialize_vectorstore()  # Vector store is now lazily initialized on first use to avoid startup delays   
 
     logger.info("✅ All systems ready")
     yield

@@ -1,4 +1,4 @@
-# 🧠 NovaRAG — Production RAG AI Assistant
+# 🧠 DocMind  — Production RAG AI Assistant
 
 A fully-featured, production-ready RAG (Retrieval-Augmented Generation) application with authentication, persistent chat history, hybrid search, and a polished SaaS-quality UI.
 

@@ -1,0 +1,21 @@
+# Backend
+backend/.env
+backend/uploads/
+backend/vectorstore/
+backend/logs/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+backend/ragapp.db
+backend/venv/
+backend/.venv/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# Docker
+*.log
+.DS_Store
+Thumbs.db

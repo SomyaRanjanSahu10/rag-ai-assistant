@@ -36,12 +36,20 @@ def initialize_vectorstore():
 
 
 def get_collection():
+    global _collection
+
     if _collection is None:
-        raise RuntimeError("Vector store not initialized")
+        initialize_vectorstore()
+        
     return _collection
 
 
 def embed_texts(texts: list[str]) -> list[list[float]]:
+    global _model
+
+    if _model is None:
+        initialize_vectorstore()
+
     return _model.encode(texts, show_progress_bar=False).tolist()
 
 
